@@ -70,7 +70,7 @@ function center (center) {
  * //= -80
  */
 function latitude (lat) {
-  if (!lat) throw new Error('lat is required')
+  if (lat === undefined || lat === null) throw new Error('lat is required')
 
   // Latitudes cannot extends beyond +/-90 degrees
   if (lat > 90 || lat < -90) {
@@ -92,7 +92,7 @@ function latitude (lat) {
  * //= -170
  */
 function longitude (lng) {
-  if (!lng) throw new Error('lng is required')
+  if (lng === undefined || lng === undefined) throw new Error('lng is required')
 
   // lngitudes cannot extends beyond +/-90 degrees
   if (lng > 180 || lng < -180) {

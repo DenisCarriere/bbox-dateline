@@ -41,6 +41,7 @@ test('bbox', t => {
 })
 
 test('latitude', t => {
+  t.deepEqual(dateline.latitude(0), 0)
   t.deepEqual(dateline.latitude(80), 80)
   t.deepEqual(dateline.latitude(100), -80)
   t.deepEqual(dateline.latitude(-100), 80)
@@ -48,6 +49,7 @@ test('latitude', t => {
 })
 
 test('longitude', t => {
+  t.deepEqual(dateline.longitude(0), 0)
   t.deepEqual(dateline.longitude(160), 160)
   t.deepEqual(dateline.longitude(190), -170)
   t.deepEqual(dateline.longitude(-190), 170)
