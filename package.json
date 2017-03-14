@@ -1,12 +1,13 @@
 {
   "name": "bbox-dateline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modifies a BBox to fit within the bounds of the International Date Line",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
     "index.js",
-    "index.d.ts"
+    "index.d.ts",
+    "docs"
   ],
   "scripts": {
     "prepublish": "npm run test && npm run build && npm run docs",

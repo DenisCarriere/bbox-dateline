@@ -1,6 +1,35 @@
 # BBox Date Line
 
-Modifies a BBox to fit within the bounds of the International Date Line.
+[![Build Status](https://travis-ci.org/DenisCarriere/bbox-dateline.svg?branch=master)](https://travis-ci.org/DenisCarriere/bbox-dateline)
+[![Coverage Status](https://coveralls.io/repos/github/DenisCarriere/bbox-dateline/badge.svg?branch=master)](https://coveralls.io/github/DenisCarriere/bbox-dateline?branch=master)
+[![npm version](https://badge.fury.io/js/bbox-dateline.svg)](https://badge.fury.io/js/bbox-dateline)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/DenisCarriere/bbox-dateline/master/LICENSE)
+
+[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
+> Modifies a BBox to fit within the bounds of the International Date Line.
+
+## Install
+
+**npm**
+
+```bash
+$ npm install --save slippy-grid
+```
+
+**web browser [ES5](https://kangax.github.io/compat-table/es5)**
+
+```html
+<script src="https://unpkg.com/bbox-dateline/docs/bbox-dateline.min.js"></script>
+```
+
+## Usage
+
+```javascript
+var dateline = require('bbox-dateline')
+dateline.bbox([190, 100, -200, -120])
+//= [-170, -80, 160, 60]
+```
 
 ## API
 
