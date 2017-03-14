@@ -1,7 +1,6 @@
 # BBox Date Line
 
 [![Build Status](https://travis-ci.org/DenisCarriere/bbox-dateline.svg?branch=master)](https://travis-ci.org/DenisCarriere/bbox-dateline)
-[![Coverage Status](https://coveralls.io/repos/github/DenisCarriere/bbox-dateline/badge.svg?branch=master)](https://coveralls.io/github/DenisCarriere/bbox-dateline?branch=master)
 [![npm version](https://badge.fury.io/js/bbox-dateline.svg)](https://badge.fury.io/js/bbox-dateline)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/DenisCarriere/bbox-dateline/master/LICENSE)
 
@@ -14,7 +13,7 @@
 **npm**
 
 ```bash
-$ npm install --save slippy-grid
+$ npm install --save bbox-dateline
 ```
 
 **web browser [ES5](https://kangax.github.io/compat-table/es5)**
