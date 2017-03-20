@@ -26,15 +26,36 @@ function bbox (bbox) {
     west = -180
     east = 180
   }
+  if (east < -180 && west > 180) {
+    west = -180
+    east = 180
+  }
   if (south < -90 && north > 90) {
     south = -90
     north = 90
   }
+  if (north < -90 && south > 90) {
+    south = -90
+    north = 90
+  }
+  if (north > 90) north = 90
+  if (south < -90) south = -90
+
+  // Beyond 360 longitude degrees
+  if (Math.abs(bbox[0] - bbox[2]) > 360) {
+    west = -180
+    east = 180
+  }
+  // Beyond 180 latitude degrees
+  if (Math.abs(bbox[1] - bbox[3]) > 180) {
+    south = -90
+    north = 90
+  }
   // Convert Lat & Lng within dateline
-  west = longitude(bbox[0])
-  south = latitude(bbox[1])
-  east = longitude(bbox[2])
-  north = latitude(bbox[3])
+  west = longitude(west)
+  south = latitude(south)
+  east = longitude(east)
+  north = latitude(north)
 
   return [west, south, east, north]
 }

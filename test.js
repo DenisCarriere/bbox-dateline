@@ -36,7 +36,11 @@ test('center', t => {
 })
 
 test('bbox', t => {
-  t.deepEqual(dateline.bbox([190, 100, -200, -120]), [-170, -80, 160, 60])
+  t.deepEqual(dateline.bbox([190, 100, -200, -120]), [-180, -90, 180, 90])
+  t.deepEqual(dateline.bbox([-190, 100, 200, -120]), [-180, -90, 180, 90])
+  t.deepEqual(dateline.bbox([-190, -100, 200, 120]), [-180, -90, 180, 90])
+  t.deepEqual(dateline.bbox([-500, -90, 100, 90]), [-180, -90, 180, 90])
+  t.deepEqual(dateline.bbox([100, -90, 500, 90]), [-180, -90, 180, 90])
   t.end()
 })
 
