@@ -1,11 +1,11 @@
-const path = require('path')
-const resolve = require('rollup-plugin-node-resolve')
-const commonjs = require('rollup-plugin-commonjs')
-const builtins = require('rollup-plugin-node-builtins')
-const globals = require('rollup-plugin-node-globals')
-const json = require('rollup-plugin-json')
+import path from 'path'
+import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
+import builtins from 'rollup-plugin-node-builtins'
+import globals from 'rollup-plugin-node-globals'
+import json from 'rollup-plugin-json'
 
-module.exports = {
+export default {
   entry: path.join(__dirname, 'index.js'),
   dest: path.join(__dirname, 'docs', 'bbox-dateline.js'),
   format: 'umd',

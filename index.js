@@ -16,10 +16,25 @@ function bbox (bbox) {
   if (!Array.isArray(bbox)) bbox = turfBBox(bbox)
   if (bbox.length !== 4) throw new Error('bbox must have 4 numbers')
 
-  var west = longitude(bbox[0])
-  var south = latitude(bbox[1])
-  var east = longitude(bbox[2])
-  var north = latitude(bbox[3])
+  var west = bbox[0]
+  var south = bbox[1]
+  var east = bbox[2]
+  var north = bbox[3]
+
+  // Support bbox that overlaps the entire world
+  if (west < -180 && east > 180) {
+    west = -180
+    east = 180
+  }
+  if (south < -90 && north > 90) {
+    south = -90
+    north = 90
+  }
+  // Convert Lat & Lng within dateline
+  west = longitude(bbox[0])
+  south = latitude(bbox[1])
+  east = longitude(bbox[2])
+  north = latitude(bbox[3])
 
   return [west, south, east, north]
 }
