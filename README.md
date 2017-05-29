@@ -11,22 +11,14 @@
 
 ## Install
 
-**npm**
-
 ```bash
-$ npm install --save bbox-dateline
-```
-
-**web browser [ES5](https://kangax.github.io/compat-table/es5)**
-
-```html
-<script src="https://unpkg.com/bbox-dateline/docs/bbox-dateline.min.js"></script>
+$ yarn add bbox-dateline
 ```
 
 ## Usage
 
 ```javascript
-var dateline = require('bbox-dateline')
+const dateline = require('bbox-dateline')
 dateline.bbox([190, 100, -200, -120])
 //= [-170, -80, 160, 60]
 ```
@@ -65,7 +57,7 @@ Modifies a Center to fit within the bounds of the International Date Line.
 
 **Parameters**
 
--   `center` **(\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)] | BBox | FeatureCollection | Feature&lt;any>)** Center [lng, lat], BBox [west, south, east, south] or GeoJSON Feature
+-   `coord` **(\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)] | BBox | FeatureCollection | Feature&lt;any>)** Center [lng, lat], BBox [west, south, east, south] or GeoJSON Feature
 
 **Examples**
 
