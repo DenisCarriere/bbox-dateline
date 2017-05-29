@@ -6,7 +6,7 @@
 
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-> Modifies a BBox to fit within the bounds of the International Date Line.
+> Modifies a BBox to fit within 180° longitude & 90° latitude.
 
 ## Install
 
