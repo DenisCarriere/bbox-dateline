@@ -1,8 +1,9 @@
-const test = require('tape')
+const {test} = require('tap')
 const fs = require('fs')
 const path = require('path')
 const load = require('load-json-file')
 const write = require('write-json-file')
+const {lineString} = require('@turf/helpers');
 const dateline = require('./')
 
 const directories = {
@@ -32,6 +33,10 @@ test('dateline', t => {
 test('center', t => {
   t.deepEqual(dateline.center([190, 100, 210, 120]), [-160, -70])
   t.deepEqual(dateline.center([190, 100]), [-170, -80])
+  t.assert(dateline.center(lineString([[0, 0], [10, 10]])))
+
+  t.throws(() => dateline.center([10]), /center requires at least 2 numbers/)
+  t.throws(() => dateline.center(), /coord is required/)
   t.end()
 })
 
@@ -46,14 +51,18 @@ test('bbox', t => {
 
 test('latitude', t => {
   t.deepEqual(dateline.latitude(0), 0)
+  t.deepEqual(dateline.latitude(-180), 0)
   t.deepEqual(dateline.latitude(80), 80)
   t.deepEqual(dateline.latitude(100), -80)
   t.deepEqual(dateline.latitude(-100), 80)
+  t.deepEqual(dateline.latitude(-0), 0)
   t.end()
 })
 
 test('longitude', t => {
   t.deepEqual(dateline.longitude(0), 0)
+  t.deepEqual(dateline.longitude(-0), 0)
+  t.deepEqual(dateline.longitude(-360), 0)
   t.deepEqual(dateline.longitude(160), 160)
   t.deepEqual(dateline.longitude(190), -170)
   t.deepEqual(dateline.longitude(-190), 170)

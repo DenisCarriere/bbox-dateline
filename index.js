@@ -63,35 +63,31 @@ function bbox (bbox) {
 /**
  * Modifies a Center to fit within the bounds of the International Date Line.
  *
- * @param {[number, number]|BBox|FeatureCollection|Feature<any>} center Center [lng, lat], BBox [west, south, east, south] or GeoJSON Feature
+ * @param {[number, number]|BBox|FeatureCollection|Feature<any>} coord Center [lng, lat], BBox [west, south, east, south] or GeoJSON Feature
  * @returns {[number, number]} valid center coordinate
  * @example
  * dateline.center([190, 100])
  * //= [-170, -80]
  */
-function center (center) {
-  var coords
-  if (!center) throw new Error('center is required')
+function center (coord) {
+  if (!coord) throw new Error('coord is required')
 
   // Support BBox [west, south, east, north]
-  if (Array.isArray(center)) {
-    if (center.length === 4) {
-      var bbox = center
+  if (Array.isArray(coord)) {
+    if (coord.length === 4) {
+      var bbox = coord
       var west = bbox[0]
       var south = bbox[1]
       var east = bbox[2]
       var north = bbox[3]
-      coords = [(west + east) / 2, (south + north) / 2]
-
-    // Support Center [lng, lat]
-    } else coords = [center[0], center[1]]
-
+      coord = [(west + east) / 2, (south + north) / 2]
+    }
   // Support any GeoJSON
-  } else coords = turfCenter(center).geometry.coordinates
+  } else coord = turfCenter(coord).geometry.coordinates
 
-  if (coords.length !== 2) throw new Error('center must have 2 numbers')
-  var lng = longitude(coords[0])
-  var lat = latitude(coords[1])
+  if (coord.length < 2) throw new Error('center requires at least 2 numbers')
+  var lng = longitude(coord[0])
+  var lat = latitude(coord[1])
 
   return [lng, lat]
 }
