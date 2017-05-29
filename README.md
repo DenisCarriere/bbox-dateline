@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/DenisCarriere/bbox-dateline.svg?branch=master)](https://travis-ci.org/DenisCarriere/bbox-dateline)
 [![npm version](https://badge.fury.io/js/bbox-dateline.svg)](https://badge.fury.io/js/bbox-dateline)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/DenisCarriere/bbox-dateline/master/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/DenisCarriere/bbox-dateline/badge.svg?branch=master)](https://coveralls.io/github/DenisCarriere/bbox-dateline?branch=master)
 
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
