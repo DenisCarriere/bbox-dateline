@@ -1,6 +1,6 @@
 {
   "name": "bbox-dateline",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Modifies a BBox to fit within the bounds of the International Date Line",
   "main": "index.js",
   "types": "index.d.ts",

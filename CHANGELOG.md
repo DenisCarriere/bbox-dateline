@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1 - 2017-06-2
+
+- Change input BBox Typescript types to `number[]`
+
 ## 1.2.0 - 2017-05-29
 
 - Drop Rollup
